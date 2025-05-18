@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { tvShows, sortedShows } from '../data/tvshows';
+import TvShowCard from '../components/TvShowCard.astro';
+---
+
+<Layout title="Astro Starter Kit">
+	<section data-grid-cell="breakout-inline-size">
+		<header><h1>Astro Starter Kit</h1></header>
+		<ul role="list" max-col-count="3">
+			{sortedShows.map(show => (
+        <li>
+					<TvShowCard show={show} />
+				</li>
+      ))}
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	section {
+		
+		padding-block: 5vmin;
+		& >*+* {
+			margin-block-start: var(--size-12);
+		}
+	}
+	ul {
+		--child-max-count: attr(max-col-count type(<number>), 3);
+		--child-min-size: var(--header-size-2);
+		--child-size-calc: calc((100% - var(--child-gap) * var(--child-max-count)) / var(--child-max-count));
+		--child-min-size-calc: min(100%, max(var(--child-min-size), var(--child-size-calc)));
+		--child-gap: var(--size-5);
+		display: grid;
+		grid-template-columns: repeat(auto-fit,minmax(var(--child-min-size-calc), 1fr));
+		gap: var(--child-gap);
+		& > li {
+			display: grid;
+			grid-template-columns: subgrid;
+		}
+	}
+</style>

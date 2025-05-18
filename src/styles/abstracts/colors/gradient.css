@@ -1,0 +1,7 @@
+:where(:root) {
+  --space: ;
+  --document-surface-gradient-color-1: 0.54 0.256 262.6;
+	--document-surface-gradient-color-2: 0.39 0.160958 354.8364;
+	--document-surface-gradient-color-3: 0.54 0.1517 132.64;
+  --gradient-1: linear-gradient(to bottom right var(--gradient-space), #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+}

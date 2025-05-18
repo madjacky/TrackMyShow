@@ -1,0 +1,21 @@
+---
+import AppLogo from './AppLogo.astro';
+interface Props {
+  class?: string;
+}
+const { class: className, ...props } = Astro.props;
+---
+<header class="header">
+  <AppLogo />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--size-8);
+    padding-block: var(--size-5);
+    padding-inline: var(--size-10);
+  }
+</style>

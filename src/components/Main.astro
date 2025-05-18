@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className, ...props } = Astro.props;
+---
+<main class="main grid-layout">
+  <slot />
+</main>
+
+<style>
+  
+</style>

@@ -1,0 +1,130 @@
+---
+import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
+import type { TvShow } from '../data/tvshows';
+import StarIcon from '../assets/images/star.svg';
+
+interface Props {
+  show: TvShow;
+  class?: string;
+}
+
+const { show, class: className, ...props } = Astro.props;
+---
+
+<article class="tv-show">
+  <figure class="tv-show__poster">
+    <Picture src={show.poster} formats={['avif', 'webp']} alt={`Poster for ${show.title}`} loading={'lazy'} />
+  </figure>
+  <div class="tv-show__details">
+    <h2 class="tv-show__title"><a href={`/shows/${show.title}`}>{show.title}</a></h2>
+    <p class="tv-show__description">{show.description}</p>
+    <div class="tv-show__meta">
+      <div class="tv-show__rating">
+        <span class="sr-only">TV Show rating details</span>
+        <span tv-show__rating-badge data-badge="age-rating">tv-ma</span>
+        <span tv-show__rating-badge data-badge="rating-count">
+          <Image src={StarIcon} width={18} height={18} alt="TV Show star rating icon" />
+          <span>{show.rating}</span>
+        </span>
+      </div>
+      <time datetime={show.year.toString()}>{show.year}</time>
+    </div>
+  </div>
+</article>
+
+<style>
+  .tv-show {
+    --card-inset: 4px;
+		--card-outer-border-radius: calc(((var(--card-inset) * 2) + var(--card-inner-border-radius)) / 2);
+		--card-inner-border-radius: var(--border-radius-8);
+		--card-transition-fucntion: var(--ease-in-out-3);
+    position: relative;
+		display: grid;
+    border-radius: var(--card-outer-border-radius);
+    aspect-ratio: var(--aspect-ratio-portrait);
+    & > .tv-show__poster {
+      & > picture {
+        position: relative;
+        & > img {
+          block-size: 100%;
+          --card-transition-duration: .3s;
+					overflow: clip;
+					inline-size: 100%;
+					object-position: center;
+					border-radius: var(--card-inner-border-radius);
+					transition: scale var(--card-transition-duration) var(--card-transition-fucntion);
+        }
+      }
+    }
+    & > .tv-show__details {
+      --card-transition-duration: .5s;
+      position: absolute;
+			inset-block-end: var(--card-inset);
+			inset-inline: var(--card-inset);
+			display: grid;
+			gap: var(--size-1);
+			padding: var(--size-5);
+			border-radius: var(--card-inner-border-radius);
+			background-color: oklch(var(--white) / .9);
+			opacity: 0;
+			transition: opacity var(--card-transition-duration) var(--card-transition-fucntion);
+      & >* {
+        --card-transition-duration: .7s;
+				opacity: 0;
+				transform: translateY(var(--size-1));
+				transition: opacity var(--card-transition-duration) var(--card-transition-fucntion), transform var(--card-transition-duration) var(--card-transition-fucntion);
+      }
+
+      & > .tv-show__description {
+        line-clamp: 2;
+        @supports not (line-clamp: 2) {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+
+      & > .tv-show__meta {
+        display: flex;
+        align-items: center;
+        gap: var(--size-3);
+        & > .tv-show__rating {
+          display: flex;
+          align-items: center;
+          gap: var(--size-3);
+          & >* {
+            display: flex;
+            align-items: center;
+            line-height: 1.5;
+          }
+          & >:where([data-badge="rating-count"]) {
+            gap: var(--size-0);
+          }
+          & >:where([data-badge="age-rating"]) {
+            padding: var(--size-0);
+            border: var(--border-size-1) solid oklch(var(--border-color));
+            border-radius: var(--border-size-3);
+            background-color: oklch(var(--white));
+            line-height: 1cap;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    &:where(:not(:active):hover) {
+      & .tv-show__poster-picture > img {
+        scale: 1.02;
+      }
+      & > .tv-show__details {
+        opacity: 1;
+        & >* {
+          opacity: 1;
+					transform: translateY(0);
+        }
+      }
+    }
+  }
+</style>

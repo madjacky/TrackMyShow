@@ -1,0 +1,40 @@
+---
+import Logo from '../assets/images/svg/logo.svg';
+interface Props {
+  class?: string;
+}
+const { class: className, ...props } = Astro.props;
+---
+<a class="app-logo" href="/" title="Home" aria-label="Home" aria-current="page"><Logo width={24} height={24} {...props}/></a>
+
+<style>
+  @keyframes skew-glitch {
+    0%,12%,13%,24%,27%,54%,57%,59%,62%,81%,84%,9%,to {
+      transform: skew(0turn)
+    }
+
+    10%,11%,25%,26%,55%,56%,60%,61%,82%,83% {
+      transform: skew(.5turn)
+    }
+  }
+  .app-logo {
+    --_app-logo-shadow-size: 0;
+    --_app-logo-shadow-color: var(--link-color);
+    padding: var(--size-1);
+    aspect-ratio: var(--aspect-ratio-square);
+    border-radius: var(--border-radius-circle-ver1);
+    box-shadow: 0 0 var(--_app-logo-shadow-size) oklch(var(--_app-logo-shadow-color));
+    @media (prefers-reduced-motion: no-preference) {
+      transition: outline-offset 145ms var(--ease-2), box-shadow .5s var(--ease-out-4), translate .3s var(--ease-3);
+    }
+    &:where(:not(:active):hover) {
+      --_app-logo-shadow-size: 5em;
+    }
+    &:where(:active) {
+      --_app-logo-shadow-size: 1.5em;
+    }
+    &:where(:not(:hover)) {
+      animation: skew-glitch 10s infinite;
+    }
+  }
+</style>
