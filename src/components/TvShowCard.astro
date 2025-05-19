@@ -66,7 +66,7 @@ const { show, class: className, ...props } = Astro.props;
 			gap: var(--size-1);
 			padding: var(--size-5);
 			border-radius: var(--card-inner-border-radius);
-			background-color: oklch(var(--white) / .9);
+			background-color: oklch(var(--surface-color-1) / .9);
 			opacity: 0;
 			transition: opacity var(--card-transition-duration) var(--card-transition-fucntion);
       & >* {
@@ -106,7 +106,7 @@ const { show, class: className, ...props } = Astro.props;
             padding: var(--size-0);
             border: var(--border-size-1) solid oklch(var(--border-color));
             border-radius: var(--border-size-3);
-            background-color: oklch(var(--white));
+            background-color: oklch(var(--surface-color-1));
             line-height: 1cap;
             text-transform: uppercase;
           }

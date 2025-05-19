@@ -1,0 +1,176 @@
+---
+import SunMoon from '../assets/images/svg/theme-toggle.svg';
+---
+<button id="theme-toggle" class="ThemeSwitch" type="button" title="Toggles light & dark" aria-label="light" aria-live="polite">
+  <SunMoon width={24} height={24} />
+</button>
+
+<style>
+  .ThemeSwitch {
+    --_theme-switch-size: var(--size-11);
+		--_theme-switch-padding: var(--size-1);
+		--_theme-switch-icon-fill: var(--text-color-2);
+		--_theme-switch-icon-fill-hover: var(--text-color-1);
+		--_theme-switch-shadow-size: 0;
+		--_theme-switch-shadow-color: var(--link-color);
+		--_theme-switch-shadow: 0 0 var(--_theme-switch-shadow-size) oklch(var(--_theme-switch-shadow-color));
+    display: inline-flex;
+		align-items: center;
+		justify-content: center;
+    display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		block-size: var(--_theme-switch-size);
+		inline-size: var(--_theme-switch-size);
+		aspect-ratio: var(--aspect-ratio-square);
+		padding: 0;
+		padding-block: calc(var(--_theme-switch-padding) + 2px);
+		padding-inline: calc(var(--_theme-switch-padding) + 2px);
+		cursor: pointer;
+    pointer-events: auto;
+		touch-action: manipulation;
+		-webkit-tap-highlight-color: transparent;
+		border: none;
+		border-radius: var(--border-radius-circle-ver1);
+		background: none;
+		box-shadow: var(--_theme-switch-shadow);
+    @media (prefers-reduced-motion: no-preference) {
+			transition: outline-offset 145ms var(--ease-2), box-shadow .5s var(--ease-out-4);
+      transition-delay: 0s,0s,.1s
+		}
+    & > .sun-and-moon {
+      block-size: 100%;
+			inline-size: 100%;
+			stroke-linecap: round;
+    }
+
+    &:is(:focus-visible, :hover) {
+      --_theme-switch-icon-fill: var(--_theme-switch-icon-fill-hover);
+
+      .sun-beams {
+        transform: rotate(20deg);
+      }
+      >.sun-and-moon>.moon>circle {
+        cx: 20px;
+      }
+    }
+
+    &:is(:hover):not(:active) {
+      --_theme-switch-shadow-size: 5em;
+    }
+
+    &:is(:active) {
+      --_theme-switch-shadow-size: 1.5em;
+    }
+
+    .sun-and-moon {
+      &>:is(.moon, .sun, .sun-beams) {
+        transform-origin: center center;
+      }
+      &>:is(.moon,.sun) {
+        fill: oklch(var(--_theme-switch-icon-fill));
+      }
+      &>.sun-beams {
+        stroke: oklch(var(--_theme-switch-icon-fill));
+				stroke-width: 2px;
+      }
+      [data-theme="dark"] & {
+        &>.sun {
+					transform: scale(1.75);
+				}
+
+        &>.sun-beams {
+					opacity: 0;
+				}
+
+        &>.moon>circle {
+					transform: translateX(-7px);
+					@supports (cx: 1px) {
+						transform:translateX(0);
+						cx: 17px;
+					}
+				}
+      }
+      @media (prefers-reduced-motion:no-preference) {
+        &>.sun {
+					transition: transform .5s var(--ease-elastic-out-3);
+				}
+
+        &>.sun-beams {
+					transition: transform .5s var(--ease-elastic-out-4), opacity .5s var(--ease-3);
+				}
+        & .moon>circle {
+					transition: transform .25s var(--ease-out-5);
+					@supports (cx:1) {
+						transition: cx .25s var(--ease-out-5);
+					}
+				}
+
+        [data-theme=dark] & {
+          &>.sun {
+						transform: scale(1.75);
+						transition-duration: .25s;
+						transition-timing-function: var(--ease-3);
+					}
+
+          &>.sun-beams {
+						transform: rotate(-25deg);
+						transition-duration: .15s;
+					}
+
+          &>.moon>circle {
+						transition-delay: .25s;
+						transition-duration: .5s;
+					}
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  const storageKey = 'theme-preference';
+  type ThemeValue = 'light' | 'dark';
+  const onClick = () => {
+    theme.value = theme.value === 'light' ? 'dark' : 'light';
+    setPreference();
+  }
+  const getColorPreference = (): ThemeValue => {
+    const storedPreference = localStorage.getItem(storageKey);
+    if (storedPreference === 'light' || storedPreference === 'dark') {
+      return storedPreference;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  const setPreference = () => {
+    localStorage.setItem(storageKey, theme.value);
+    reflectPreference();
+  }
+  const reflectPreference = () => {
+    const root = document.firstElementChild;
+    const themeToggle = document.querySelector('#theme-toggle');
+    
+    if (root) {
+      root.setAttribute('data-theme', theme.value);
+    }
+    
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', theme.value);
+    }
+  }
+  const theme = {
+    value: getColorPreference(),
+  }
+  reflectPreference();
+  window.onload = () => {
+    reflectPreference();
+    const themeToggle = document.querySelector('#theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', onClick);
+    }
+  }
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches: isDark }) => {
+    theme.value = isDark ? 'dark' : 'light';
+    setPreference();
+  })
+</script>

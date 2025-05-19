@@ -1,5 +1,6 @@
 ---
 import AppLogo from './AppLogo.astro';
+import ThemeToggler from "./ThemeToggler.astro";
 interface Props {
   class?: string;
 }
@@ -7,6 +8,7 @@ const { class: className, ...props } = Astro.props;
 ---
 <header class="header">
   <AppLogo />
+  <ThemeToggler />
 </header>
 
 <style>
