@@ -148,7 +148,7 @@ const coverImage = show.cover.src;
   <article class="tv-show" data-grid-cell="full-inline-size">
     <header class="tv-show__showcase" data-grid-cell="full-inline-size" style={`--cover-image: url(${coverImage});`}>
       <div class="tv-show__showcase-wrapper" data-grid-cell="breakout-inline-size">
-        <figure class="tv-show__poster">
+        <figure class="tv-show__poster" style={`--cover-image: url(${coverImage});`}>
           <button type="button" light-box title="View larger">
             <Picture src={show.poster} formats={['avif', 'webp']} width={300} height={450} alt={`Poster for ${show.title}`} loading={'lazy'} />
           </button>
@@ -201,14 +201,19 @@ const coverImage = show.cover.src;
 </Layout>
 
 <style>
+  button:is([light-box]) {
+    display: inline-flex;
+  }
   .tv-show {
     & > .tv-show__showcase {
       padding-block: var(--size-10);
-      background-image: var(--cover-image);
       border-image: linear-gradient(to right, oklch(var(--stone-11)) calc((50vw - 170px) - 340px), oklch(var(--stone-11) / .84) 50%, oklch(var(--stone-11) / .84) 100%) fill 1;
       background-position: left calc((50vw - 170px) - 340px) top;
-      background-size: cover;
 			background-repeat: no-repeat;
+      @container (inline-size > 768px) {
+        background-image: var(--cover-image);
+        background-size: auto;
+      }
       & > .tv-show__showcase-wrapper {
         display: grid;
         gap: var(--size-5);
@@ -221,6 +226,25 @@ const coverImage = show.cover.src;
     .tv-show__cast-section {
       min-block-size: 30cqb;
       padding-block: 10vmin;
+    }
+  }
+  .tv-show__poster {
+    button {
+      background-image: url(https://imgur.com/hlrUFj8.jpg);
+      border-image: linear-gradient(to right, oklch(var(--stone-11)) calc((50vw - 170px) - 340px), oklch(var(--stone-11) / .5) 50%, oklch(var(--stone-11) / .5) 100%) fill 1;
+      background-position: calc((((50cqi / 2.222222) - 20px) / 1.5) / 2) 0;
+			background-size: cover;
+			background-repeat: no-repeat;
+    }
+    picture {
+      display: flex;
+      & > img {
+        block-size: auto;
+				inline-size: 40cqi;
+        @container (inline-size > 768px) {
+          inline-size: 100%;
+        }
+      }
     }
   }
   .tv-show__details {
