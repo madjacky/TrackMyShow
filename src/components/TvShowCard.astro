@@ -12,12 +12,12 @@ interface Props {
 const { show, class: className, ...props } = Astro.props;
 ---
 
-<article class="tv-show">
+<article class="tv-show" tabindex="0" {...props}>
   <figure class="tv-show__poster">
     <Picture src={show.poster} formats={['avif', 'webp']} alt={`Poster for ${show.title}`} loading={'lazy'} />
   </figure>
   <div class="tv-show__details">
-    <h2 class="tv-show__title"><a href={`/shows/${show.title}`}>{show.title}</a></h2>
+    <h2 class="tv-show__title"><a href={`/shows/${show.id}`}>{show.title}</a></h2>
     <p class="tv-show__description">{show.description}</p>
     <div class="tv-show__meta">
       <div class="tv-show__rating">

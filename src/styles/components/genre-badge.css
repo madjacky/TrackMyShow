@@ -1,0 +1,9 @@
+.badge {
+  line-height: 1cap;
+  padding: var(--size-0);
+  border-radius: var(--border-radius-3);
+  border: var(--border-size-1) solid oklch(var(--gray-4));
+  color: oklch(var(--gray-4));
+  font-size: var(--font-size-1);
+  text-transform: uppercase;
+}

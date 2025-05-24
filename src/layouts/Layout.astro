@@ -22,10 +22,11 @@ const { pageType = 'home', title, class: className, ...props } = Astro.props;
 	</head>
 	<body class="page__body" data-page-type={pageType}>
 		<Header />
-		<Main>
+		<Main class="grid-layout">
 			<slot />
 		</Main>
 		<Footer />
+		<figure id="lightbox" popover></figure>
 	</body>
 </html>
 <style is:global>
@@ -37,13 +38,17 @@ const { pageType = 'home', title, class: className, ...props } = Astro.props;
 		display: grid;
 		grid-template-rows: [header] auto [main] 1fr [footer] auto;
 		& > .header {
-			grid-column: header;
+			grid-row: header;
 		}
 		& > .main {
-			grid-column: main;
+			grid-row: main;
 		}
 		& > .footer {
-			grid-column: footer;
+			grid-row: footer;
 		}
 	}
 </style>
+
+<script>
+	
+</script>

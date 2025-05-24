@@ -4,7 +4,7 @@ interface Props {
 }
 const { class: className, ...props } = Astro.props;
 ---
-<main class="main grid-layout">
+<main class={`main${className ? ` ${className}` : ''}`}>
   <slot />
 </main>
 

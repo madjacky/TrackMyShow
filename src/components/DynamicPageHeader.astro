@@ -1,0 +1,37 @@
+---
+import type { TvShow } from '../data/tvshows';
+import { Picture } from 'astro:assets';
+interface Props {
+  class?: string;
+  show: TvShow;
+}
+const { show, class: className, ...props } = Astro.props;
+const coverImageUrl = show.cover.src;
+---
+<header class="header" aria-label="Dynamic Page Header" style={`--cover-image: url(${coverImageUrl});`} >
+  <div class="header__content">
+    <h2>{show.title}</h2>
+  </div>
+</header>
+
+<style>
+  header {
+    grid-row: header;
+    min-block-size: 70cqb;
+    background-image: var(--cover-image);
+    background-size: cover;
+    background-position: center;
+    & > nav {
+      position: sticky;
+		  inset-block-start: 0;
+		  z-index: var(--layer-2);
+		  view-transition-name: site-nav;
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  gap: var(--size-5);
+		  padding-block: var(--size-5);
+		  padding-inline: var(--size-10);
+    }
+  }
+</style>

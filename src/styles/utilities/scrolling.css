@@ -1,0 +1,18 @@
+[horizontal-scroll] {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding-block: var(--size-5);
+  padding-inline-end: var(--size-14);
+  body:has(:popover-open) & {
+    overflow: clip;
+  }
+}
+[horizontal-snapping] {
+  & >* {
+    scroll-snap-align: start;
+  }
+}
+[hide-horizontal-overflow] {
+  overflow-x: clip;
+}

@@ -1,0 +1,57 @@
+---
+import FeatureBadgeIcon from "./FeatureBadgeIcon.astro";
+
+interface Badge {
+  icon: 'uhd' | 'dolbyvision' | 'dolbyatmos' | 'ad' | 'cc' | 'sdc' | 'tvma';
+  'aria-label'?: string;
+}
+const { icon, 'aria-label': ariaLabel, class: className, ...props } = Astro.props;
+
+const featureBadges: Badge[] = [
+  {
+    icon: 'tvma',
+    "aria-label": 'TV-MA Rating',
+  },
+  {
+    icon: 'uhd',
+    "aria-label": '4K Ultra HD',
+  },
+  {
+    icon: 'ad',
+    "aria-label": 'Audio Description',
+  },
+  {
+    icon: 'cc',
+    "aria-label": 'Closed Captions',
+  },
+  {
+    icon: 'sdc',
+    "aria-label": 'SD Content',
+  },
+  {
+    icon: 'dolbyvision',
+    "aria-label": 'Dolby Vision',
+  },
+  {
+    icon: 'dolbyatmos',
+    "aria-label": 'Dolby Atmos',
+  },
+]
+---
+<div class={`feature-badges${className ? ` ${className}` : ''}`}>
+  {featureBadges.map((badge) => (
+    <span class="feature-badges__item">
+      <FeatureBadgeIcon icon={badge.icon} class="feature-badges__icon" aria-label={badge['aria-label']} />
+    </span>
+  ))}
+</div>
+
+<style>
+  .feature-badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: var(--size-3);
+  }
+</style>

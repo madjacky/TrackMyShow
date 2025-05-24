@@ -1,6 +1,3 @@
-@view-transition {
-  navigation: auto;
-}
 *,
 ::before,
 ::after {
@@ -24,13 +21,18 @@
     transition-duration: .25s;
   }
 }
+@view-transition {
+  navigation: auto;
+}
 :where(:root) {
   interpolate-size: allow-keywords;
+  view-transition-name: none;
   --transition-focus: outline-offset 145ms var(--ease-2);
   @supports (transition-timing-function: linear(0, 1)) {
     --transition-focus: outline-offset 145ms var(--ease-spring-3);
   }
 }
+
 :where(:not(dialog, popover)) {
   margin: 0;
   padding: 0;
@@ -45,6 +47,7 @@
   --isLTR: 1;
 	--isRTL: -1;
   block-size: 100%;
+  view-timeline: document-timeline;
   hanging-punctuation: first last;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;

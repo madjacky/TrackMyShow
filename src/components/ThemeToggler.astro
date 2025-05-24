@@ -1,7 +1,8 @@
 ---
 import SunMoon from '../assets/images/svg/theme-toggle.svg';
+const { class: className, ...props } = Astro.props;
 ---
-<button id="theme-toggle" class="ThemeSwitch" type="button" title="Toggles light & dark" aria-label="light" aria-live="polite">
+<button id="theme-toggle" class={`ThemeSwitch${className ? ` ${className}` : ''}`} type="button" title="Toggles light & dark" aria-label="light" aria-live="polite" {...props}>
   <SunMoon width={24} height={24} />
 </button>
 

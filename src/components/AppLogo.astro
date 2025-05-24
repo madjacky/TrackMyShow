@@ -1,11 +1,8 @@
 ---
 import Logo from '../assets/images/svg/logo.svg';
-interface Props {
-  class?: string;
-}
 const { class: className, ...props } = Astro.props;
 ---
-<a class="app-logo" href="/" title="Home" aria-label="Home" aria-current="page"><Logo width={24} height={24} {...props}/></a>
+<a class={`app-logo${className ? ` ${className}` : ''}`} href="/" title="Home" aria-label="Home" aria-current="page"><Logo width={24} height={24} {...props}/></a>
 
 <style>
   @keyframes skew-glitch {

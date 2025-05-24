@@ -2,29 +2,283 @@
 import { Picture } from 'astro:assets';
 import BackIcon from '../../assets/images/svg/back.svg';
 import Layout from '../../layouts/Layout.astro';
+import ActorCard from '../../components/ActorCard.astro';
+import ScrollProgress from '../../components/ScroollProgress.astro';
 import { tvShows } from '../../data/tvshows';
+import StarLogo from '../../assets/images/svg/star.svg';
+import FeatureBadge from '../../components/FeatureBadge.astro';
 
 export async function getStaticPaths() {
   return tvShows.map(show => ({
-    params: { id: show.title },
+    params: { id: show.id },
     props: { show },
   }));
 }
-const { show } = Astro.props;
+const { show, ...props } = Astro.props;
+const coverImage = show.cover.src;
 ---
-<section>
-  <header>
-    <Picture src={show.cover} formats={['avif', 'webp']} alt={`Poster for ${show.title}`} loading={'lazy'} />
-  </header>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    {show.cast.map(actor => (
-      <div class="bg-white rounded-lg shadow-md overflow-hidden p-4">
-        <div class="flex flex-col items-center text-center">
-          <Picture src={actor.avatar}  formats={['avif', 'webp']} alt={`Poster for ${actor.name}`} loading={'lazy'} />
-          <h3 class="font-bold">{actor.name}</h3>
-          <p class="text-gray-600">{actor.role}</p>
+<!-- <Layout title={show.title}>
+  <article class="tv-show" data-grid-cell="full-inline-size">
+    <header class="tv-show__hero" data-grid-cell="full-inline-size" style={`--cover-image: url(${coverImage});`}>
+      <div class="tv-show__hero-wrapper" data-grid-cell="full-inline-size">
+        <div class="tv-show__hero-content">
+          <figure>
+            <Picture src={show.poster} formats={['avif', 'webp']} width={300} height={450} alt={`Poster for ${show.title}`} loading={'lazy'} />
+          </figure>
+          <div class="tv-show__hero-info">
+            <h2>{show.title}</h2>
+            <p>{show.description}</p>
+            <div class="tv-show__creators">
+              <h3>Creators</h3>
+              <ul role="list">
+                {show.creators.map(creator => (
+                  <li>
+                    <span>{creator}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    ))}
-  </div>
-</section>
+    </header>
+    <section class="tv-show__cast-section cast-section" hide-horizontal-overflow>
+      <header class="cast-section__header">
+        <h3>Cast</h3>
+        <ScrollProgress />
+      </header>
+      <ul class="cast-carousel" role="list" horizontal-scroll horizontal-snapping>
+        {show.cast.map(actor => (
+          <li class="cast-carousel__item">
+            <ActorCard actor={actor} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  @keyframes scroll-progress {
+    from {
+      translate: -100% 0;
+    }
+  }
+  .tv-show {
+    display: grid;
+    gap: var(--size-14);
+    padding-block-end: 10vmin;
+    & > .tv-show__hero {
+      position: relative;
+      min-block-size: 65cqb;
+      z-index: var(--layer-1);
+      background-image: var(--cover-image);
+      background-position: left calc((50vi - 170px) - 340px) top;
+      background-repeat: no-repeat;
+			background-size: auto;
+      & > .tv-show__hero-wrapper {
+        background-image: linear-gradient(to right, oklch(var(--black)) calc((50vw - 170px) - 340px), oklch(var(--black) / 45%) 50%, oklch(var(--black) / 65%) 100%);
+        & > .tv-show__hero-content {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          align-content: center;
+          gap: var(--size-10);
+          color: oklch(var(--gray-4));
+          & .tv-show__hero-info {
+            display: grid;
+            gap: var(--size-10);
+            align-content: end;
+            & > .tv-show__creators {
+              & > ul {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: var(--size-5);
+              }
+            }
+              
+          }
+          h2 {
+            font-size: var(--fluid-font-size-4);
+            color: oklch(var(--gray-0));
+          }
+        }
+      }
+    }
+  }
+  .cast-section {
+    --_scroll-timeline-name: --cast;
+    grid-column: content-inline-size-start / full-inline-size-end;
+    timeline-scope: var(--_scroll-timeline-name);
+    & > .cast-section__header {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: space-between;
+      margin-block-end: var(--size-5);
+      & > h3 {
+        font-size: var(--fluid-font-size-3);
+      }
+      & > scroll-progress {
+        @supports (animation-timeline: scroll()) {
+          &::after {
+            background: oklch(var(--link-color));
+            animation: scroll-progress linear both;
+            animation-timeline: var(--_scroll-timeline-name);
+          }
+        }
+      }
+    }
+    & >.cast-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 15cqi;
+      gap: var(--size-5);
+      &:is([horizontal-scroll]) {
+        scroll-timeline: var(--_scroll-timeline-name) x;
+      }
+
+      & > .cast-carousel__item {
+        container: actor-card / inline-size;
+      }
+    }
+  }
+</style> -->
+
+<Layout title={show.title}>
+  <article class="tv-show" data-grid-cell="full-inline-size">
+    <header class="tv-show__showcase" data-grid-cell="full-inline-size" style={`--cover-image: url(${coverImage});`}>
+      <div class="tv-show__showcase-wrapper" data-grid-cell="breakout-inline-size">
+        <figure class="tv-show__poster">
+          <button type="button" light-box title="View larger">
+            <Picture src={show.poster} formats={['avif', 'webp']} width={300} height={450} alt={`Poster for ${show.title}`} loading={'lazy'} />
+          </button>
+        </figure>
+        <div class="tv-show__details">
+          <div class="tv-show__title-group">
+            <h2 class="tv-show__title">{show.title}</h2>
+            <p class="tv-show__tagline">Every path has a price.</p>
+          </div>
+          <div class="tv-show__overview">
+            <h3>Overview</h3>
+            <p>{show.description}</p>
+          </div>
+          <div class="tv-show__creators">
+            <h3>Creators</h3>
+            <ul role="list">
+              {show.creators.map(creator => (
+                <li>
+                  <span>{creator}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="tv-show__metadata">
+            <div class="tv-show__metadata-col">
+              <time datetime={`${show.year}`}>{show.year}</time>
+              <div class="tv-show__ratings">
+                <span data-rating="score">
+                  <StarLogo width={16} height={16} />
+                  {show.rating}
+                </span>
+              </div>
+              <div class="tv-show__badges">
+                <FeatureBadge />
+              </div>
+            </div>
+            <div class="tv-show__metadata-col">
+              <div class="tv-show__genres">
+                {show.genres.map(genre => (
+                  <span class="badge">{genre}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="tv-show__cast-section"></section>
+  </article>
+</Layout>
+
+<style>
+  .tv-show {
+    & > .tv-show__showcase {
+      padding-block: var(--size-10);
+      background-image: var(--cover-image);
+      border-image: linear-gradient(to right, oklch(var(--stone-11)) calc((50vw - 170px) - 340px), oklch(var(--stone-11) / .84) 50%, oklch(var(--stone-11) / .84) 100%) fill 1;
+      background-position: left calc((50vw - 170px) - 340px) top;
+      background-size: cover;
+			background-repeat: no-repeat;
+      & > .tv-show__showcase-wrapper {
+        display: grid;
+        gap: var(--size-5);
+        @container (inline-size > 768px) {
+          grid-template-columns: auto 1fr;
+          gap: var(--size-10);
+        }
+      }
+    }
+    .tv-show__cast-section {
+      min-block-size: 30cqb;
+      padding-block: 10vmin;
+    }
+  }
+  .tv-show__details {
+    display: grid;
+    gap: var(--size-8);
+    place-content: start;
+		place-items: start;
+		align-content: end;
+    color: oklch(var(--gray-4));
+    :where(h2, h3, h4) {
+      color: oklch(var(--gray-0));
+    }
+    :where(h2) {
+      margin-block-end: var(--size-1);
+      font-size: var(--fluid-font-size-4);
+    }
+    :where(h3) {
+      margin-block-end: var(--size-3);
+    }
+
+    & > .tv-show__creators {
+      & > h2 {
+        margin-block-end: var(--size-5);
+      }
+      & > ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--size-3);
+      }
+    }
+    & > .tv-show__metadata {
+      display: grid;
+      gap: var(--size-5);
+      & >* {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--size-5);
+      }
+      & >.tv-show__metadata-col {
+        & >* {
+          display: flex;
+          align-items: center;
+          gap: var(--size-3);
+        }
+        & >.tv-show__ratings {
+          & >span:where([data-rating="score"]) {
+            display: flex;
+            align-items: center;
+            gap: var(--size-0);
+            & > svg {
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+        
+    }
+  }
+</style>

@@ -1,23 +1,20 @@
 ---
-import AppLogo from './AppLogo.astro';
-import ThemeToggler from "./ThemeToggler.astro";
+import Navigation from './Navigation.astro';
 interface Props {
   class?: string;
 }
 const { class: className, ...props } = Astro.props;
 ---
-<header class="header">
-  <AppLogo />
-  <ThemeToggler />
+<header class={`header${className ? ` ${className}` : ''}`} {...props}>
+  <Navigation  />
 </header>
 
-<style>
+<style is:global>
   .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--size-8);
-    padding-block: var(--size-5);
-    padding-inline: var(--size-10);
+    position: sticky;
+		inset-block-start: 0;
+    container-type: scroll-state;
+		z-index: var(--layer-2);
+    view-transition-name: site-nav;
   }
 </style>

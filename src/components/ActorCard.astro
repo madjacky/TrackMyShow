@@ -1,0 +1,51 @@
+---
+import { Picture } from 'astro:assets';
+import { tvShows } from '../data/tvshows';
+import type { Cast } from '../data/tvshows';
+interface Props {
+  actor: Cast;
+  class?: string;
+}
+
+const { actor, class: className, ...props } = Astro.props;
+---
+<figure class={`actor${className ? ` ${className}` : ''}`}>
+  <button type="button" light-box title="View larger">
+    <Picture pictureAttributes={{class: `actor__avatar${className ? ` ${className}` : ''}`}} src={actor.avatar} width={212} height={212}  formats={['avif', 'webp']} alt={`Poster for ${actor.name}`} loading={'lazy'} />
+  </button>
+  <figcaption class={`actor__meta${className ? ` ${className}` : ''}`}>
+    <h4 class={`actor__role${className ? ` ${className}` : ''}`}>{actor.role}</h4>
+    <p class={`actor__name${className ? ` ${className}` : ''}`}>{actor.name}</p>
+  </figcaption>
+</figure>
+
+<style>
+  .actor {
+    display: grid;
+    grid: auto 1fr / 1fr;
+    /* block-size: 100%; */
+    place-items: end stretch;
+    aspect-ratio: var(--aspect-ratio-portrait);
+    gap: var(--size-1);
+    padding-block: var(--size-1);
+    padding-inline: var(--size-1) var(--size-3);
+    border: var(--border-size-1) solid oklch(var(--border-color));
+    border-radius: var(--border-radius-5);
+    background-color: light-dark(oklch(var(--surface-color-0)), oklch(var(--surface-color-1)));
+    box-shadow: var(--shadow-0);
+    .actor__avatar {
+      overflow: clip;
+      & > img {
+        block-size: 100%;
+        object-fit: contain;
+        inline-size: 100%;
+      }
+    }
+    & > .actor__meta {
+      display: grid;
+      gap: var(--size-1);
+      padding-block: var(--size-5);
+      padding-inline: var(--size-5);
+    }
+  }
+</style>

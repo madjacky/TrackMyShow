@@ -1,0 +1,62 @@
+---
+import DolbyVision from '../assets/images/svg/dolbyvision.svg';
+import UltraHd from '../assets/images/svg/4k.svg';
+import DolbyAtmos from '../assets/images/svg/dolbyatmos.svg';
+import Ad from '../assets/images/svg/ad.svg';
+import Cc from '../assets/images/svg/cc.svg';
+import Sdc from '../assets/images/svg/sdc.svg';
+import Tvma from '../assets/images/svg/tvma.svg';
+
+interface Props {
+  icon: 'uhd' | 'dolbyvision' | 'dolbyatmos' | 'ad' | 'cc' | 'sdc' | 'tvma';
+  class: string;
+  size?: number;
+  'aria-label'?: string;
+}
+const { icon, size, 'aria-label': ariaLabel, class: className, ...props } = Astro.props;
+
+const iconsMap = {
+  uhd: UltraHd,
+  ad: Ad,
+  cc: Cc,
+  sdc: Sdc,
+  tvma: Tvma,
+  dolbyvision: DolbyVision,
+  dolbyatmos: DolbyAtmos,
+}
+
+const iconSize = {
+  uhd: { width: 26, height: 14 },
+  tvma: { width: 47, height: 14 },
+  dolbyvision: { width: 52, height: 14 },
+  dolbyatmos: { width: 52, height: 14 },
+  cc: { width: 26, height: 14 },
+  ad: { width: 26, height: 14 },
+  sdc: { width: 32, height: 14 },
+} as const;
+
+const dimensions = iconSize[icon];
+const finalWidth = size || dimensions.width;
+const finalHeight = size || dimensions.height;
+
+const defaultAriaLabels = {
+  uhd: '4K Ultra HD',
+  dolbyvision: 'Dolby Vision',
+  dolbyatmos: 'Dolby Atmos',
+  ad: 'Audio Description',
+  cc: 'Closed Captions',
+  sdc: 'SDC',
+  tvma: 'TV-MA Rating'
+} as const;
+
+const finalAriaLabel = ariaLabel || defaultAriaLabels[icon];
+
+const FeatureIcon = iconsMap[icon];
+
+
+---
+{FeatureIcon && <FeatureIcon width={finalWidth} height={finalHeight} class={`badge-icon${className ? ` ${className}` : ''}`} aria-hidden="true" aria-label={finalAriaLabel} {...props} />}
+
+<style>
+
+</style>

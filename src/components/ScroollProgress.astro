@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className, ...props }: Props = Astro.props;
+---
+<scroll-progress class={`scroll-progress${className ? ` ${className}` : ''}`} {...props}></scroll-progress>
+
+<style>
+  .scroll-progress {
+    overflow: clip;
+    display: grid;
+    place-self: end;
+    block-size: 1ex;
+    inline-size: 10ch;
+    border-radius: var(--border-radius-circle-ver1);
+    background-color: oklch(var(--surface-color-4));
+    &::after {
+      content: '';
+      grid-area: 1 / 1;
+      border-radius: inherit;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+    @supports not (animation-timeline: scroll()) {
+      display: none !important;
+    }
+    @container (inline-size >= 768px) {
+      margin-inline-end: var(--size-5);
+    }
+  }
+</style>
