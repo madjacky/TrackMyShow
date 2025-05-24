@@ -10,6 +10,7 @@ export interface Cast {
 export interface TvShow {
   id: string
   title: string
+  tagline: string
   description: string
   year: number
   cast: Cast[]
@@ -56,6 +57,7 @@ export const tvShows: TvShow[] = [
   {
     id: "x-files",
     title: "X-Files",
+    tagline: "The truth is out there.",
     description:
       "Two FBI agents, Fox Mulder the believer and Dana Scully the skeptic, investigate the strange and unexplained, while hidden forces work to impede their efforts.",
     year: 1993,
@@ -82,6 +84,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sopranos",
     title: "The Sopranos",
+    tagline: "Family. Redefined.",
     description:
       "New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life, which subsequently affect his mental state, leading him to seek psychiatric counseling.",
     year: 1999,
@@ -104,6 +107,7 @@ export const tvShows: TvShow[] = [
   {
     id: "last-of-us",
     title: "The Last of Us",
+    tagline: "Every path has a price.",
     description:
       "In a post-apocalyptic world, Joel, a hardened survivor, is tasked with escorting Ellie, a young girl immune to the zombie plague, across the United States.",
     year: 2023,
@@ -127,6 +131,7 @@ export const tvShows: TvShow[] = [
   {
     id: "homeland",
     title: "Homeland",
+    tagline: "The nation sees a hero. She sees a threat.",
     description:
       "A bipolar CIA operative becomes convinced a prisoner of war has been turned by al-Qaeda and is planning to execute a terrorist attack on American soil.",
     year: 2011,
@@ -149,6 +154,7 @@ export const tvShows: TvShow[] = [
   {
     id: "breaking-bad",
     title: "Breaking Bad",
+    tagline: "Change the equation.",
     description:
       "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
     year: 2008,
@@ -171,6 +177,7 @@ export const tvShows: TvShow[] = [
   {
     id: "prison-break",
     title: "Prison Break",
+    tagline: "Break in. Break out. Save your brother's life.",
     description:
       "A structural engineer installs himself in a prison he helped design, in order to save his falsely accused brother from a death sentence.",
     year: 2005,
@@ -193,6 +200,7 @@ export const tvShows: TvShow[] = [
   {
     id: "game-of-thrones",
     title: "Game of Thrones",
+    tagline: "Winter is coming.",
     description:
       "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
     year: 2011,
@@ -220,6 +228,7 @@ export const tvShows: TvShow[] = [
   {
     id: "american-primeval",
     title: "American Primeval",
+    tagline: "No one survives alone.",
     description:
       "An exploration of the birth of the American West, the violent collision of cultures, religions and the untamed wilderness.",
     year: 2024,
@@ -243,6 +252,7 @@ export const tvShows: TvShow[] = [
   {
     id: "yellowstone",
     title: "Yellowstone",
+    tagline: "Generations of blood have led to this.",
     description: "A ranching family in Montana faces off against others encroaching on their land.",
     year: 2018,
     cast: [
@@ -270,6 +280,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sons-of-anarchy",
     title: "Sons of Anarchy",
+    tagline: "Let freedom ride.",
     description: "A biker struggles to balance being a father and being involved in an outlaw motorcycle club.",
     year: 2008,
     cast: [
@@ -294,6 +305,7 @@ export const tvShows: TvShow[] = [
   {
     id: "ozark",
     title: "Ozark",
+    tagline: "No one gets out clean.",
     description:
       "A financial advisor drags his family from Chicago to the Missouri Ozarks, where he must launder money to appease a drug boss.",
     year: 2017,
@@ -317,6 +329,7 @@ export const tvShows: TvShow[] = [
   {
     id: "witcher",
     title: "The Witcher",
+    tagline: "Destiny is a beast.",
     description:
       "Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.",
     year: 2019,
@@ -339,6 +352,7 @@ export const tvShows: TvShow[] = [
   {
     id: "stranger-things",
     title: "Stranger Things",
+    tagline: "The world is turning upside down.",
     description:
       "In the summer of 1985, in Hawkins, Indiana, a new mall has opened, and the Hawkins crew are on the cusp of adulthood. Romance blossoms and complicates the group's dynamic, and they'll have to learn how to grow up without growing apart.",
     year: 2016,
@@ -367,6 +381,7 @@ export const tvShows: TvShow[] = [
   {
     id: "maid",
     title: "Maid",
+    tagline: "Hard work, low pay and a mother's will to survive.",
     description: "A young mother escapes an abusive relationship and fights to provide a better life for her daughter.",
     year: 2021,
     cast: [
@@ -388,6 +403,7 @@ export const tvShows: TvShow[] = [
   {
     id: "unbelievable",
     title: "Unbelievable",
+    tagline: "Based on true events no one believed.",
     description:
       "After a teen reports being raped, she faces pressure from police to recant her story, and is charged with filing a false report, while two female detectives in another state investigate a series of eerily similar rapes.",
     year: 2019,
@@ -410,6 +426,7 @@ export const tvShows: TvShow[] = [
   {
     id: "terminal-list",
     title: "The Terminal List",
+    tagline: "Your memory makes you question the truth.",
     description:
       "A Navy SEAL officer investigates why his entire platoon was ambushed during a high-stakes covert mission.",
     year: 2022,
@@ -433,6 +450,7 @@ export const tvShows: TvShow[] = [
   {
     id: "waco",
     title: "Waco",
+    tagline: "Based on the true story that shocked the world.",
     description:
       "The story of the 51-day standoff between the FBI, ATF, and David Koresh's religious sect, the Branch Davidians, in Waco, Texas in 1993.",
     year: 2018,
@@ -457,6 +475,7 @@ export const tvShows: TvShow[] = [
   {
     id: "shantaram",
     title: "Shantaram",
+    tagline: "Welcome to Bombay.",
     description:
       "An escaped convict flees to Bombay, where he reinvents himself as a doctor and gets entangled in the city's criminal underworld.",
     year: 2022,
@@ -479,6 +498,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sex-education",
     title: "Sex Education",
+    tagline: "Growth is a group project.",
     description:
       "A teenage boy with a sex therapist mother teams up with a classmate to set up an underground sex therapy clinic at their high school.",
     year: 2019,
@@ -501,6 +521,7 @@ export const tvShows: TvShow[] = [
   {
     id: "shogun",
     title: "Shogun",
+    tagline: "An epic saga of war, passion, and power set in Feudal Japan.",
     description: "An English sailor becomes entangled in the power struggles of feudal Japan.",
     year: 2024,
     cast: [
@@ -522,6 +543,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sneaky-pete",
     title: "Sneaky Pete",
+    tagline: "The Truth is Always Changing",
     description:
       "A con man on the run from a vicious gangster assumes the identity of his cellmate, Pete, and integrates himself into Pete's estranged family.",
     year: 2015,
@@ -544,6 +566,7 @@ export const tvShows: TvShow[] = [
   {
     id: "ted-lasso",
     title: "Ted Lasso",
+    tagline: "Believe in believe.",
     description:
       "An American college football coach is unexpectedly recruited to coach a professional soccer team in England, despite having no experience in the sport.",
     year: 2020,
@@ -566,6 +589,7 @@ export const tvShows: TvShow[] = [
   {
     id: "chernobyl",
     title: "Chernobyl",
+    tagline: "What is the cost of lies?",
     description:
       "In April 1986, an explosion at the Chernobyl nuclear power plant in the Soviet Union becomes one of the world's worst man-made catastrophes.",
     year: 2019,
@@ -588,6 +612,7 @@ export const tvShows: TvShow[] = [
   {
     id: "the-wire",
     title: "The Wire",
+    tagline: "Listen carefully.",
     description: "The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.",
     year: 2002,
     cast: [
@@ -614,6 +639,7 @@ export const tvShows: TvShow[] = [
   {
     id: "true-detective",
     title: "True Detective",
+    tagline: "The truth lies in the dark.",
     description:
       "An anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law.",
     year: 2014,
@@ -639,6 +665,7 @@ export const tvShows: TvShow[] = [
   {
     id: "fargo",
     title: "Fargo",
+    tagline: "Consequence comes knocking.",
     description:
       "Various chronicles of deception, intrigue and murder in and around frozen Minnesota, all of which lead back to Fargo.",
     year: 2014,
@@ -663,6 +690,7 @@ export const tvShows: TvShow[] = [
   {
     id: "succession",
     title: "Succession",
+    tagline: "Make your move.",
     description:
       "The Roy family is known for controlling the biggest media and entertainment company in the world. However, their world changes when their father steps down from the company.",
     year: 2018,
@@ -688,6 +716,7 @@ export const tvShows: TvShow[] = [
   {
     id: "narcos",
     title: "Narcos",
+    tagline: "There's no business like blow business.",
     description: "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.",
     year: 2015,
     cast: [
@@ -711,6 +740,7 @@ export const tvShows: TvShow[] = [
   {
     id: "peaky-blinders",
     title: "Peaky Blinders",
+    tagline: "London's for the taking.",
     description:
       "A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
     year: 2013,
@@ -734,6 +764,7 @@ export const tvShows: TvShow[] = [
   {
     id: "fleabag",
     title: "Fleabag",
+    tagline: "Hilarious and hurtful.",
     description: "A dry-witted woman, known only as Fleabag, navigates modern life in London.",
     year: 2016,
     cast: [
@@ -755,6 +786,7 @@ export const tvShows: TvShow[] = [
   {
     id: "severance",
     title: "Severance",
+    tagline: "There's more to work than life.",
     description:
       "Mark leads a team of office workers whose memories have been surgically divided between their work and personal lives. When a mysterious colleague appears outside of work, it begins a journey to discover the truth about their jobs.",
     year: 2022,
@@ -778,6 +810,7 @@ export const tvShows: TvShow[] = [
   {
     id: "parks-and-recreation",
     title: "Parks and Recreation",
+    tagline: "Because parks don't grow on trees.",
     description: "A mockumentary that looks at the exciting world of local government.",
     year: 2009,
     cast: [
@@ -803,6 +836,7 @@ export const tvShows: TvShow[] = [
   {
     id: "house-of-cards",
     title: "House of Cards",
+    tagline: "There are two kinds of pain.",
     description: "A Congressman works with his equally ambitious wife to exact revenge on those who betrayed him.",
     year: 2013,
     cast: [
@@ -824,6 +858,7 @@ export const tvShows: TvShow[] = [
   {
     id: "mindhunter",
     title: "Mindhunter",
+    tagline: "History. Pattern. Profile.",
     description:
       "In the late 1970s, two FBI agents expand criminal science by delving into the psychology of murder and getting uneasily close to all-too-real monsters.",
     year: 2017,
@@ -846,6 +881,7 @@ export const tvShows: TvShow[] = [
   {
     id: "queens-gambit",
     title: "The Queen's Gambit",
+    tagline: "Confidence is key.",
     description:
       "Orphaned at the age of nine, prodigious introvert Beth Harmon discovers and masters the game of chess in 1960s USA. But child stardom comes at a price.",
     year: 2020,
@@ -868,6 +904,7 @@ export const tvShows: TvShow[] = [
   {
     id: "jack-ryan",
     title: "Jack Ryan",
+    tagline: "Truth needs a soldier.",
     description:
       "When CIA analyst Jack Ryan stumbles upon a suspicious series of bank transfers, his search for answers pulls him from the safety of his desk job and catapults him into a deadly game of cat and mouse throughout Europe and the Middle East, with a rising terrorist figure preparing for a massive attack against the US and its allies.",
     year: 2018,
@@ -890,6 +927,7 @@ export const tvShows: TvShow[] = [
   {
     id: "interrogation",
     title: "Interrogation",
+    tagline: "Justice is a matter of perspective.",
     description:
       "A young man is charged and convicted of murdering his mother. Each episode is built around interrogations inspired by the real case file. The viewer is invited to reach their own conclusion.",
     year: 2020,
@@ -912,6 +950,7 @@ export const tvShows: TvShow[] = [
   {
     id: "night-of",
     title: "The Night Of",
+    tagline: "What happened",
     description:
       "After a night of partying with a mysterious woman, a man wakes up to find her murdered. He is arrested and charged with the crime, but he has no memory of what happened.",
     year: 2016,
@@ -934,6 +973,7 @@ export const tvShows: TvShow[] = [
   {
     id: "mayor-of-kingstown",
     title: "Mayor of Kingstown",
+    tagline: "You can't bury the past.",
     description:
       "In a small Michigan town where the only industry remaining is federal, state, and private prisons, the McLusky family are power brokers between the prisoners and the community.",
     year: 2021,
@@ -956,6 +996,7 @@ export const tvShows: TvShow[] = [
   {
     id: "seal-team",
     title: "SEAL Team",
+    tagline: "Their fight is never over.",
     description:
       "The lives of the elite Navy SEALs as they train, plan, and execute the most dangerous, high-stakes missions our country can ask of them.",
     year: 2017,
@@ -978,6 +1019,7 @@ export const tvShows: TvShow[] = [
   {
     id: "your-honor",
     title: "Your Honor",
+    tagline: "How far would you go to save your child?",
     description:
       "A judge is faced with a terrible decision when his son is involved in a hit-and-run that involves a mob family.",
     year: 2020,
@@ -1000,6 +1042,7 @@ export const tvShows: TvShow[] = [
   {
     id: "halo",
     title: "Halo",
+    tagline: "Rise from the fall.",
     description:
       "In the 26th century, humanity is locked in a war with the Covenant, a religious alliance of aliens. Master Chief, a super-soldier, is humanity's only hope.",
     year: 2022,
@@ -1024,6 +1067,7 @@ export const tvShows: TvShow[] = [
   {
     id: "special-ops-lioness",
     title: "Special Ops: Lioness",
+    tagline: "Backing down is not in her nature.",
     description:
       "Cruz, a rough-around-the-edges but passionate young Marine, is recruited to join the Lioness Engagement Team to help bring down a terrorist organization from within.",
     year: 2023,
@@ -1047,6 +1091,7 @@ export const tvShows: TvShow[] = [
   {
     id: "silo",
     title: "Silo",
+    tagline: "To live, you need something to die for.",
     description:
       "In a ruined and toxic future, a community exists in a giant underground silo. When people break the silo's rules, they are sent outside to their death.",
     year: 2023,
@@ -1069,6 +1114,7 @@ export const tvShows: TvShow[] = [
   {
     id: "dune-prophecy",
     title: "Dune: Prophecy",
+    tagline: "True power begins with control.",
     description:
       "A prequel to the Dune saga, set 10,000 years before the events of Dune. It follows the story of the Bene Gesserit sisterhood.",
     year: 2024,
@@ -1091,6 +1137,7 @@ export const tvShows: TvShow[] = [
   {
     id: "agency",
     title: "The Agency",
+    tagline: "Lie or die: secrets have a cost.",
     description: "A spy thriller about a former CIA operative who is pulled back into the world of espionage.",
     year: 2024,
     cast: [
@@ -1112,6 +1159,7 @@ export const tvShows: TvShow[] = [
   {
     id: "killing",
     title: "The Killing",
+    tagline: "The past can't be washed away.",
     description:
       "Police investigate the murder of a young girl in Seattle. The investigation is complicated by the fact that the girl's family is hiding secrets.",
     year: 2011,
@@ -1137,6 +1185,7 @@ export const tvShows: TvShow[] = [
   {
     id: "billions",
     title: "Billions",
+    tagline: "Go for broke.",
     description: "A U.S. Attorney battles a hedge fund king in a high-stakes game of cat and mouse.",
     year: 2016,
     cast: [
@@ -1159,6 +1208,7 @@ export const tvShows: TvShow[] = [
   {
     id: "wecrashed",
     title: "WeCrashed",
+    tagline: "A love story worth $47 billion.",
     description: "The rise and fall of WeWork, one of the world's most valuable startups.",
     year: 2022,
     cast: [
@@ -1180,6 +1230,7 @@ export const tvShows: TvShow[] = [
   {
     id: "truth-be-told",
     title: "Truth Be Told",
+    tagline: "No disappearance is a coincidence.",
     description: "A true crime podcaster risks everything to pursue the truth behind a decades-old murder case.",
     year: 2019,
     cast: [
@@ -1201,6 +1252,7 @@ export const tvShows: TvShow[] = [
   {
     id: "last-thing-he-told-me",
     title: "The Last Thing He Told Me",
+    tagline: "Protect what you love.",
     description:
       "A woman forms an unexpected relationship with her sixteen-year-old stepdaughter while searching for the truth about why her husband has mysteriously disappeared.",
     year: 2023,
@@ -1222,6 +1274,7 @@ export const tvShows: TvShow[] = [
   {
     id: "fallout",
     title: "Fallout",
+    tagline: "The world deserves a better ending.",
     description:
       "Based on one of the greatest video game series of all time, Fallout is the story of haves and have-nots in a world in which there's almost nothing left to share. 200 years after the apocalypse, the gentle denizens of luxury fallout shelters are forced to return to the irradiated hellscape their ancestors left behind - and are shocked to discover an incredibly complex, gleefully weird and highly violent universe waiting for them.",
     year: 2024,
@@ -1245,6 +1298,7 @@ export const tvShows: TvShow[] = [
   {
     id: "big-bang-theory",
     title: "The Big Bang Theory",
+    tagline: "Smart is the new sexy.",
     description:
       "A woman moves into an apartment across the hall from brilliant, but socially awkward, physicists, who shows them how little they know about life outside of the lab.",
     year: 2007,
@@ -1274,6 +1328,7 @@ export const tvShows: TvShow[] = [
   {
     id: "ray-donovan",
     title: "Ray Donovan",
+    tagline: "Some damage can't be controlled.",
     description:
       "Ray Donovan, a professional 'fixer' for the rich and famous in Los Angeles, can make anyone's problems disappear, except those created by his own family.",
     year: 2013,
@@ -1298,6 +1353,7 @@ export const tvShows: TvShow[] = [
   {
     id: "taboo",
     title: "Taboo",
+    tagline: "He returned from the dead.",
     description:
       "An adventurer returns to London from Africa in 1814 to claim his inheritance, but discovers that his father has left him an unwelcome legacy.",
     year: 2017,
@@ -1324,6 +1380,7 @@ export const tvShows: TvShow[] = [
   {
     id: "atypical",
     title: "Atypical",
+    tagline: "Normal is overrated.",
     description:
       "A teenager on the autism spectrum decides to find a girlfriend, which sparks a journey of self-discovery for him and his family.",
     year: 2017,
@@ -1346,6 +1403,7 @@ export const tvShows: TvShow[] = [
   {
     id: "diplomat",
     title: "The Diplomat",
+    tagline: "Keep your friends close. Keep your enemies closer.",
     description:
       "Amid an international crisis, a career diplomat lands in a high-profile job she's unsuited for, with tectonic implications for her marriage and her political future.",
     year: 2023,
@@ -1369,6 +1427,7 @@ export const tvShows: TvShow[] = [
   {
     id: "americans",
     title: "The Americans",
+    tagline: "All's fair in love and cold war.",
     description:
       "A pair of Soviet KGB spies pose as an American married couple in suburban Washington, D.C. during the Reagan administration.",
     year: 2013,
@@ -1391,6 +1450,7 @@ export const tvShows: TvShow[] = [
   {
     id: "lincoln-lawyer",
     title: "The Lincoln Lawyer",
+    tagline: "Justice hurts.",
     description:
       "An iconoclastic idealist runs his law practice out of the back of his Lincoln Town Car as he takes on cases big and small across the expansive city of Los Angeles.",
     year: 2022,
@@ -1414,6 +1474,7 @@ export const tvShows: TvShow[] = [
   {
     id: "oa",
     title: "The OA",
+    tagline: "This is a dream but you're wide awake.",
     description:
       "A young woman who returns home after being missing for seven years. Her reappearance is accompanied by miraculous new abilities.",
     year: 2016,
@@ -1444,6 +1505,7 @@ export const tvShows: TvShow[] = [
   {
     id: "three-body-problem",
     title: "3 Body Problem",
+    tagline: "Science is broken. Humanity is threatened.",
     description:
       "A young physicist in 1960s China grapples with the consequences of a decision made decades prior, as a mysterious series of events plague scientists around the world.",
     year: 2024,
@@ -1470,6 +1532,7 @@ export const tvShows: TvShow[] = [
   {
     id: "gentlemen",
     title: "The Gentlemen",
+    tagline: "A new class of criminal.",
     description:
       "An American expat in London inherits his father's marijuana empire, and becomes entangled in the city's criminal underworld.",
     year: 2024,
@@ -1494,6 +1557,7 @@ export const tvShows: TvShow[] = [
   {
     id: "end-of-the-fucking-world",
     title: "The End of the F***ing World",
+    tagline: "Some love stories begin at the end.",
     description:
       "James, 17, is pretty sure he's a psychopath. Alyssa, 17, is the cool and moody new girl in school. Together, they embark on a road trip to find her estranged father.",
     year: 2017,
@@ -1516,6 +1580,7 @@ export const tvShows: TvShow[] = [
   {
     id: "mare-of-easttown",
     title: "Mare of Easttown",
+    tagline: "All truths come to light.",
     description:
       "A detective in a small Pennsylvania town investigates a local murder while trying to keep her life from falling apart.",
     year: 2021,
@@ -1539,6 +1604,7 @@ export const tvShows: TvShow[] = [
   {
     id: "euphoria",
     title: "Euphoria",
+    tagline: "Remember this feeling.",
     description:
       "A look at life for a group of high school students as they grapple with issues of drugs, sex, and violence.",
     year: 2019,
@@ -1562,6 +1628,7 @@ export const tvShows: TvShow[] = [
   {
     id: "tulsa-king",
     title: "Tulsa King",
+    tagline: "The boss is back.",
     description:
       "Just after he is released from prison after 25 years, a New York mafia capo is unceremoniously exiled by his boss to set up shop in Tulsa, Oklahoma.",
     year: 2022,
@@ -1586,6 +1653,7 @@ export const tvShows: TvShow[] = [
   {
     id: "resident-alien",
     title: "Resident Alien",
+    tagline: "Beam this up.",
     description:
       "A crash-landed alien assumes the identity of a small-town doctor and slowly begins to wrestle with the moral dilemma of his secret mission on Earth.",
     year: 2021,
@@ -1610,6 +1678,7 @@ export const tvShows: TvShow[] = [
   {
     id: "widow",
     title: "The Widow",
+    tagline: "She'll stop at nothing to find the truth.",
     description:
       "When Georgia Wells loses her husband in a plane crash in the Congolese jungle, she embarks on a dangerous journey to uncover the truth about his disappearance.",
     year: 2019,
@@ -1632,6 +1701,7 @@ export const tvShows: TvShow[] = [
   {
     id: "landman",
     title: "LandMan",
+    tagline: "The land. The money. The fight.",
     description: "Set in West Texas, Land Man is a modern-day tale of fortune seeking in the world of oil rigs.",
     year: 2024,
     cast: [
@@ -1653,6 +1723,7 @@ export const tvShows: TvShow[] = [
   {
     id: "heroes",
     title: "Heroes",
+    tagline: "You can't choose your family, you can choose a side.",
     description:
       "Ordinary people from around the world discover that they have super powers and must unite to prevent a global catastrophe.",
     year: 2006,
@@ -1680,6 +1751,7 @@ export const tvShows: TvShow[] = [
   {
     id: "1923",
     title: "1923",
+    tagline: "Defend or die.",
     description:
       "Set in the Prohibition era of Montana, this series follows the Dutton family's struggle to maintain their ranch and navigate the changing landscape of America during a time of economic hardship and social upheaval.",
     year: 2023,
@@ -1703,6 +1775,7 @@ export const tvShows: TvShow[] = [
   {
     id: "legends",
     title: "Legends",
+    tagline: "What if your identity wasn't your own?",
     description:
       "A deep-cover operative named Martin Odum, who has an uncanny ability to transform himself into a different person for each job.",
     year: 2014,
@@ -1726,6 +1799,7 @@ export const tvShows: TvShow[] = [
   {
     id: "long-bright-river",
     title: "Long Bright River",
+    tagline: "To save her sister, she must confront a city's darkest secrets",
     description:
       "A police officer in Philadelphia searches for her missing sister in a neighborhood ravaged by the opioid crisis.",
     year: 2023,
@@ -1748,6 +1822,7 @@ export const tvShows: TvShow[] = [
   {
     id: "lockerbie",
     title: "Lockerbie: A Search for Truth",
+    tagline: "One father's relentless search for the truth.",
     description: "A documentary series examining the 1988 bombing of Pan Am Flight 103 over Lockerbie, Scotland.",
     year: 2023,
     cast: [
@@ -1769,6 +1844,7 @@ export const tvShows: TvShow[] = [
   {
     id: "disclaimer",
     title: "Disclaimer",
+    tagline: "*The past always finds you.",
     description:
       "A successful journalist whose work has been built on revealing the transgressions of beloved public figures finds herself on the receiving end of a disclosure.",
     year: 2024,
@@ -1791,6 +1867,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sugar",
     title: "Sugar",
+    tagline: "Who is Sugar?",
     description: "A private detective investigates the disappearance of a Hollywood producer's granddaughter.",
     year: 2024,
     cast: [
@@ -1814,6 +1891,7 @@ export const tvShows: TvShow[] = [
   {
     id: "bad-monkey",
     title: "Bad Monkey",
+    tagline: "The shady side of paradise.",
     description: "A former detective investigates a suspicious death in the Florida Keys.",
     year: 2024,
     cast: [
@@ -1836,6 +1914,7 @@ export const tvShows: TvShow[] = [
   {
     id: "under-the-bridge",
     title: "Under the Bridge",
+    tagline: "A party. A murder. A hidden world of suspects.",
     description: "The true story of the 1997 murder of a Canadian teenager and the investigation that followed.",
     year: 2024,
     cast: [
@@ -1858,6 +1937,7 @@ export const tvShows: TvShow[] = [
   {
     id: "emperor-of-ocean-park",
     title: "Emperor of Ocean Park",
+    tagline: "Every family has secrets. Some are deadly.",
     description: "A law professor investigates the suspicious death of his father, a prominent conservative judge.",
     year: 2024,
     cast: [
@@ -1878,6 +1958,7 @@ export const tvShows: TvShow[] = [
   {
     id: "presumed-innocent",
     title: "Presumed Innocent",
+    tagline: "Presume nothing.",
     description: "A prosecutor becomes the prime suspect in the murder of a colleague with whom he had an affair.",
     year: 2024,
     cast: [
@@ -1899,6 +1980,7 @@ export const tvShows: TvShow[] = [
   {
     id: "goliath",
     title: "Goliath",
+    tagline: "The fight for justice starts at the bottom.",
     description:
       "A disgraced lawyer, now an ambulance chaser, gets a case that could bring him redemption or at least revenge on the firm which expelled him.",
     year: 2016,
@@ -1923,6 +2005,7 @@ export const tvShows: TvShow[] = [
   {
     id: "alice-and-jack",
     title: "Alice & Jack",
+    tagline: "Two souls, a lifetime of almost.",
     description:
       "A love story about two people who meet and have an instant connection that changes their lives forever.",
     year: 2024,
@@ -1945,6 +2028,7 @@ export const tvShows: TvShow[] = [
   {
     id: "lady-in-the-lake",
     title: "Lady in the Lake",
+    tagline: "To find the truth, she risked everything.",
     description:
       "In 1960s Baltimore, an investigative journalist working on an unsolved murder clashes with a woman working to advance the agenda of the city's Black community.",
     year: 2024,
@@ -1967,6 +2051,7 @@ export const tvShows: TvShow[] = [
   {
     id: "dark-matter",
     title: "Dark Matter",
+    tagline: "One life. Infinite possibilities.",
     description:
       "A physicist finds himself caught in multiple parallel universes where different versions of his life unfold.",
     year: 2023,
@@ -1989,6 +2074,7 @@ export const tvShows: TvShow[] = [
   {
     id: "eric",
     title: "Eric",
+    tagline: "The real monsters aren't under the bed.",
     description:
       "A father's desperate search for his nine-year-old son who disappeared one morning on the way to school.",
     year: 2023,
@@ -2011,6 +2097,7 @@ export const tvShows: TvShow[] = [
   {
     id: "parish",
     title: "Parish",
+    tagline: "The wrong way is the only way out.",
     description: "A former getaway driver is pulled back into a life of crime when his family is threatened.",
     year: 2024,
     cast: [
@@ -2032,6 +2119,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sharp-objects",
     title: "Sharp Objects",
+    tagline: "Welcome home.",
     description:
       "A reporter confronts the psychological demons from her past when she returns to her hometown to cover a violent murder.",
     year: 2018,
@@ -2054,6 +2142,7 @@ export const tvShows: TvShow[] = [
   {
     id: "tokyo-vice",
     title: "Tokyo Vice",
+    tagline: "Find the truth, no matter the cost.",
     description: "An American journalist embeds himself in the Tokyo Metropolitan Police to expose corruption.",
     year: 2022,
     cast: [
@@ -2075,6 +2164,7 @@ export const tvShows: TvShow[] = [
   {
     id: "criminal-record",
     title: "Criminal Record",
+    tagline: "You can't hide from yourself.",
     description: "Two detectives clash while investigating a high-profile murder case in London.",
     year: 2024,
     cast: [
@@ -2096,6 +2186,7 @@ export const tvShows: TvShow[] = [
   {
     id: "monsieur-spade",
     title: "Monsieur Spade",
+    tagline: "Some mysteries never retire.",
     description:
       "Sam Spade, now living in the South of France in 1963, finds his quiet life upended when an old acquaintance asks for help.",
     year: 2024,
@@ -2118,6 +2209,7 @@ export const tvShows: TvShow[] = [
   {
     id: "lessons-in-chemistry",
     title: "Lessons in Chemistry",
+    tagline: "Life rarely follows a formula.",
     description: "A female scientist in the 1960s becomes a TV cooking show host after being fired from her lab.",
     year: 2023,
     cast: [
@@ -2139,6 +2231,7 @@ export const tvShows: TvShow[] = [
   {
     id: "patient",
     title: "The Patient",
+    tagline: "No one said therapy was easy.",
     description:
       "A psychotherapist finds himself held prisoner by a serial killer with an unusual request: to curb his homicidal urges.",
     year: 2022,
@@ -2160,6 +2253,7 @@ export const tvShows: TvShow[] = [
   {
     id: "knick",
     title: "The Knick",
+    tagline: "Modern medicine had to start somewhere.",
     description:
       "A brilliant surgeon pushes the boundaries of medicine, morality, and race relations at a New York City hospital at the turn of the 20th century.",
     year: 2014,
@@ -2182,6 +2276,7 @@ export const tvShows: TvShow[] = [
   {
     id: "mildred-pierce",
     title: "Mildred Pierce",
+    tagline: "Having it all would cost her everything.",
     description:
       "A divorced single mom in Depression-era California builds a restaurant empire while dealing with her ungrateful daughter.",
     year: 2011,
@@ -2204,6 +2299,7 @@ export const tvShows: TvShow[] = [
   {
     id: "all-the-light",
     title: "All the Light We Cannot See",
+    tagline: "In the darkness, hope shines brightest.",
     description:
       "The story of a blind French girl and a German boy whose paths collide in occupied France during World War II.",
     year: 2023,
@@ -2226,6 +2322,7 @@ export const tvShows: TvShow[] = [
   {
     id: "white-house-plumbers",
     title: "White House Plumbers",
+    tagline: "Watergate was bad. They were worse.",
     description:
       "The story of how Nixon's own political saboteurs and Watergate masterminds accidentally toppled the presidency they were zealously trying to protect.",
     year: 2023,
@@ -2248,6 +2345,7 @@ export const tvShows: TvShow[] = [
   {
     id: "undoing",
     title: "The Undoing",
+    tagline: "Nothing stays hidden.",
     description: "A successful therapist's life unravels after her husband disappears following a violent death.",
     year: 2020,
     cast: [
@@ -2269,6 +2367,7 @@ export const tvShows: TvShow[] = [
   {
     id: "full-circle",
     title: "Full Circle",
+    tagline: "What goes around.",
     description:
       "An investigation into a botched kidnapping uncovers long-held secrets connecting multiple characters and cultures in present-day New York City.",
     year: 2023,
@@ -2291,6 +2390,7 @@ export const tvShows: TvShow[] = [
   {
     id: "crowded-room",
     title: "The Crowded Room",
+    tagline: "The facts are never the whole story.",
     description:
       "A young man is arrested for a shocking crime, and an investigator must unravel the mystery behind it.",
     year: 2023,
@@ -2314,6 +2414,7 @@ export const tvShows: TvShow[] = [
   {
     id: "class-of-09",
     title: "Class of '09",
+    tagline: "Time changes everything.",
     description: "A group of FBI agents navigate changes in the U.S. criminal justice system across three decades.",
     year: 2023,
     cast: [
@@ -2335,6 +2436,7 @@ export const tvShows: TvShow[] = [
   {
     id: "perry-mason",
     title: "Perry Mason",
+    tagline: "There's power in the truth.",
     description: "In 1930s Los Angeles, a defense attorney takes on increasingly complex cases.",
     year: 2020,
     cast: [
@@ -2356,6 +2458,7 @@ export const tvShows: TvShow[] = [
   {
     id: "alaska-daily",
     title: "Alaska Daily",
+    tagline: "The deeper the mystery, the darker the truth.",
     description:
       "A disgraced journalist moves to Alaska to work for a newspaper in Anchorage, where she investigates cold cases of missing and murdered indigenous women.",
     year: 2022,
@@ -2378,6 +2481,7 @@ export const tvShows: TvShow[] = [
   {
     id: "echo-3",
     title: "Echo 3",
+    tagline: "The rescue is only the beginning.",
     description:
       "When a scientist goes missing along the Colombia-Venezuela border, her brother and her husband struggle to find her amid a backdrop of explosive geopolitics.",
     year: 2022,
@@ -2400,6 +2504,7 @@ export const tvShows: TvShow[] = [
   {
     id: "george-and-tammy",
     title: "George & Tammy",
+    tagline: "The rise and fall of country music’s King and Queen.",
     description:
       "Chronicles the country music power couple George Jones and Tammy Wynette, whose complicated relationship inspired some of the most iconic music of all time.",
     year: 2022,
@@ -2422,6 +2527,7 @@ export const tvShows: TvShow[] = [
   {
     id: "spy-among-friends",
     title: "A Spy Among Friends",
+    tagline: "One of their own has done the unthinkable.",
     description:
       "The defection of notorious British intelligence officer and KGB double agent, Kim Philby, is told through the lens of his complex relationship with MI6 colleague and close friend, Nicholas Elliott.",
     year: 2022,
@@ -2444,6 +2550,7 @@ export const tvShows: TvShow[] = [
   {
     id: "five-days-at-memorial",
     title: "Five Days at Memorial",
+    tagline: "When the water rose, humanity was tested.",
     description: "Chronicles the impact of Hurricane Katrina and its aftermath on a hospital in New Orleans.",
     year: 2022,
     cast: [
@@ -2465,6 +2572,7 @@ export const tvShows: TvShow[] = [
   {
     id: "candy",
     title: "Candy",
+    tagline: "Inspired by disturbingly true events.",
     description:
       "Candy Montgomery is a 1980s housewife and mother who did everything right—but when the pressure of conformity builds within her, her actions scream for just a bit of freedom.",
     year: 2022,
@@ -2487,6 +2595,7 @@ export const tvShows: TvShow[] = [
   {
     id: "city-on-a-hill",
     title: "City on a Hill",
+    tagline: "Boston, 1993. No one gets away clean.",
     description:
       "In early 1990s Boston, an assistant district attorney and a corrupt FBI veteran work together to take on a case that changes the city's entire criminal justice system.",
     year: 2019,
@@ -2509,6 +2618,7 @@ export const tvShows: TvShow[] = [
   {
     id: "black-bird",
     title: "Black Bird",
+    tagline: "One man's freedom hides in another man's darkness.",
     description:
       "A high school football hero and son of a decorated police officer is sentenced to prison for drug dealing. He is offered a chance at freedom if he can elicit a confession from a suspected serial killer.",
     year: 2022,
@@ -2531,6 +2641,7 @@ export const tvShows: TvShow[] = [
   {
     id: "we-own-this-city",
     title: "We Own This City",
+    tagline: "In a war, you count the bodies and call them victories.",
     description:
       "The rise and fall of the Baltimore Police Department's Gun Trace Task Force and the corruption surrounding it.",
     year: 2022,
@@ -2553,6 +2664,7 @@ export const tvShows: TvShow[] = [
   {
     id: "killing-eve",
     title: "Killing Eve",
+    tagline: "Sorry baby.",
     description: "A security operative hunts for an assassin. Based on the Villanelle novellas by Luke Jennings.",
     year: 2018,
     cast: [
@@ -2574,6 +2686,7 @@ export const tvShows: TvShow[] = [
   {
     id: "tell-me-your-secrets",
     title: "Tell Me Your Secrets",
+    tagline: "Every secret has a price.",
     description:
       "A trio of characters, each with a mysterious and troubling past: a young woman who once looked into the eyes of a dangerous killer, a former serial predator desperate to find redemption, and a grieving mother obsessed with finding her missing daughter.",
     year: 2021,
@@ -2596,6 +2709,7 @@ export const tvShows: TvShow[] = [
   {
     id: "pieces-of-her",
     title: "Pieces of Her",
+    tagline: "When her past comes calling, her mother's true identity is revealed.",
     description:
       "A woman pieces together her mother's dark past after a violent attack in their small town brings hidden threats and deadly secrets to light.",
     year: 2022,
@@ -2618,6 +2732,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sinner",
     title: "The Sinner",
+    tagline: "Her sins will drown them all.",
     description: "Anthology series that examines how and why ordinary people commit brutal crimes.",
     year: 2017,
     cast: [
@@ -2640,6 +2755,7 @@ export const tvShows: TvShow[] = [
   {
     id: "third-day",
     title: "The Third Day",
+    tagline: "There are things here you cannot escape.",
     description: "A man and a woman make separate journeys to a mysterious island off the British coast.",
     year: 2020,
     cast: [
@@ -2663,6 +2779,7 @@ export const tvShows: TvShow[] = [
   {
     id: "scenes-from-a-marriage",
     title: "Scenes From A Marriage",
+    tagline: "Five acts. Endless emotion.",
     description:
       "A modern adaptation of Ingmar Bergman's classic series, exploring love, hatred, desire, monogamy, marriage, and divorce through the lens of a contemporary American couple.",
     year: 2021,
@@ -2685,6 +2802,7 @@ export const tvShows: TvShow[] = [
   {
     id: "teacher",
     title: "A Teacher",
+    tagline: "Power, abuse, and the damage it leaves.",
     description:
       "A high school English teacher has an affair with her student and faces the consequences when the relationship is discovered.",
     year: 2020,
@@ -2707,6 +2825,7 @@ export const tvShows: TvShow[] = [
   {
     id: "too-close",
     title: "Too Close",
+    tagline: "Some bonds are too dangerous to break.",
     description:
       "A forensic psychiatrist assigned to assess a woman accused of a heinous crime finds herself becoming dangerously close to her patient.",
     year: 2021,
@@ -2729,6 +2848,7 @@ export const tvShows: TvShow[] = [
   {
     id: "ratched",
     title: "Ratched",
+    tagline: "Evil isn't born. It's made.",
     description: "The origin story of asylum nurse Mildred Ratched from 'One Flew Over the Cuckoo's Nest'.",
     year: 2020,
     cast: [
@@ -2750,6 +2870,7 @@ export const tvShows: TvShow[] = [
   {
     id: "street-lights",
     title: "When the Street Lights Go On",
+    tagline: "In this town, every secret waits for darkness.",
     description:
       "After the murder of a beautiful young girl rocks a suburban community, the victim's sister and her high school peers must struggle to find a sense of normalcy.",
     year: 2020,
@@ -2772,6 +2893,7 @@ export const tvShows: TvShow[] = [
   {
     id: "sorry-for-your-loss",
     title: "Sorry for Your Loss",
+    tagline: "Grief is a story with no end.",
     description: "A young widow struggles to put her life back together after her husband's unexpected death.",
     year: 2018,
     cast: [
@@ -2793,6 +2915,7 @@ export const tvShows: TvShow[] = [
   {
     id: "assets",
     title: "The Assets",
+    tagline: "The deadliest enemy is often within.",
     description:
       "The true story of CIA counter-intelligence officer Sandy Grimes and her role in the hunt for Soviet mole Aldrich Ames.",
     year: 2014,
@@ -2815,6 +2938,7 @@ export const tvShows: TvShow[] = [
   {
     id: "path",
     title: "The Path",
+    tagline: "Belief is a dangerous journey.",
     description:
       "A family struggles with relationships, faith, and power after joining a controversial religious movement.",
     year: 2016,
@@ -2837,6 +2961,7 @@ export const tvShows: TvShow[] = [
   {
     id: "innocent-man",
     title: "The Innocent Man",
+    tagline: "When justice fails, the truth becomes a lie.",
     description:
       "A documentary series based on John Grisham's non-fiction book about two murders in Ada, Oklahoma, in the 1980s and the controversial chain of events that followed.",
     year: 2018,
@@ -2855,6 +2980,7 @@ export const tvShows: TvShow[] = [
   {
     id: "jonestown",
     title: "Jonestown: Terror in the Jungle",
+    tagline: "Minister. Messiah. Monster.",
     description:
       "A documentary series examining the Peoples Temple led by Jim Jones and the events surrounding the mass murder-suicide at Jonestown in 1978.",
     year: 2018,
@@ -2872,6 +2998,7 @@ export const tvShows: TvShow[] = [
   {
     id: "six",
     title: "SIX",
+    tagline: "The toughest missions are the ones they bring home.",
     description:
       "Navy SEAL Team Six attempt to eliminate a Taliban leader in Afghanistan when they discover an American citizen working with the enemy.",
     year: 2017,
@@ -2896,6 +3023,7 @@ export const tvShows: TvShow[] = [
   {
     id: "collateral",
     title: "Collateral",
+    tagline: "The truth doesn't take sides.",
     description: "A detective investigates the death of a pizza delivery man shot in South London.",
     year: 2018,
     cast: [
@@ -2917,6 +3045,7 @@ export const tvShows: TvShow[] = [
   {
     id: "ten-days",
     title: "Ten Days in the Valley",
+    tagline: "Truth is just another story.",
     description:
       "A television producer's life implodes when her young daughter disappears in the middle of the night and the two worlds she tries to navigate collide.",
     year: 2017,
@@ -2939,6 +3068,7 @@ export const tvShows: TvShow[] = [
   {
     id: "guerrilla",
     title: "Guerrilla",
+    tagline: "Love. Revolution. The ultimate risk.",
     description:
       "A couple's relationship is tested when they liberate a political prisoner and form a radical underground cell in 1970s London.",
     year: 2017,
@@ -2962,6 +3092,7 @@ export const tvShows: TvShow[] = [
   {
     id: "hand-of-god",
     title: "Hand of God",
+    tagline: "When justice is blind, faith takes the lead.",
     description:
       "A morally corrupt judge suffers a breakdown and believes God is compelling him onto a path of vigilante justice.",
     year: 2014,
@@ -2984,6 +3115,7 @@ export const tvShows: TvShow[] = [
   {
     id: "black-market",
     title: "Black Market with Michael K. Williams",
+    tagline: "Beyond the law, life finds a way.",
     description: "Actor Michael K. Williams explores underground economies around the world.",
     year: 2016,
     cast: [
@@ -2998,6 +3130,7 @@ export const tvShows: TvShow[] = [
   {
     id: "american-west",
     title: "The American West",
+    tagline: "The truth is always wilder.",
     description: "A docudrama about the American West in the period after the Civil War from 1865 to 1890.",
     year: 2016,
     cast: [
@@ -3019,6 +3152,7 @@ export const tvShows: TvShow[] = [
   {
     id: "good-doctor",
     title: "The Good Doctor",
+    tagline: "Everyone operates differently.",
     description: "Shaun Murphy, a young surgeon with autism and Savant syndrome, is recruited into the surgical unit of a prestigious hospital.",
     year: 2017,
     cast: [
