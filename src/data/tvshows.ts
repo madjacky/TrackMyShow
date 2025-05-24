@@ -16,6 +16,7 @@ export interface TvShow {
   cast: Cast[]
   poster: ImageMetadata
   cover: ImageMetadata
+  smallCover: ImageMetadata
   rating: number
   genres: string[]
   creators: string[]
@@ -44,6 +45,10 @@ function getPoster(id: string): ImageMetadata {
 function getCover(id: string): ImageMetadata {
   const basePath = `/src/assets/images/tv-shows/show-covers/${id}`
   return findImage(basePath, id, "Cover")
+}
+function getSmallCover(id: string): ImageMetadata {
+  const basePath = `/src/assets/images/tv-shows/show-covers/${id}-small`
+  return findImage(basePath, id, "Small cover")
 }
 
 function getActorAvatar(actorName: string): ImageMetadata {
@@ -77,6 +82,7 @@ export const tvShows: TvShow[] = [
     ],
     poster: getPoster("x-files"),
     cover: getCover("x-files"),
+    smallCover: getSmallCover("x-files"),
     rating: 8.8,
     genres: ["Science Fiction", "Drama", "Mystery", "Thriller"],
     creators: ["Chris Carter"],

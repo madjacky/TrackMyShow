@@ -167,7 +167,7 @@ const coverImage = show.cover.src;
             <ul role="list">
               {show.creators.map(creator => (
                 <li>
-                  <span>{creator}</span>
+                  <a href="/">{creator}</a>
                 </li>
               ))}
             </ul>
@@ -304,5 +304,15 @@ const coverImage = show.cover.src;
       }
         
     }
+  }
+
+  .tv-show__creators {
+    a {
+      color: oklch(var(--link-color));
+    }
+  }
+  .tv-show__tagline {
+    font-weight: var(--font-weight-300);
+    font-style: italic;
   }
 </style>
